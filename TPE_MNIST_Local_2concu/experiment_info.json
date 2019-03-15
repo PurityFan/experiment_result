@@ -1,0 +1,79 @@
+{
+    "id": "CgG5IK6T",
+    "revision": 3416,
+    "execDuration": 33477,
+    "logDir": "/home/v-shhuan/nni/experiments/CgG5IK6T",
+    "maxSequenceId": 67,
+    "params": {
+      "maxTrialNum": 500,
+      "maxExecDuration": 72000,
+      "trainingServicePlatform": "local",
+      "trialConcurrency": 2,
+      "authorName": "default",
+      "clusterMetaData": [
+        {
+          "key": "codeDir",
+          "value": "/home/v-shhuan/nni_code/nni/examples/trials/mnist/."
+        },
+        {
+          "key": "command",
+          "value": "python3 mnist.py"
+        }
+      ],
+      "tuner": {
+        "builtinTunerName": "TPE",
+        "className": "TPE",
+        "classArgs": {
+          "optimize_mode": "maximize"
+        },
+        "checkpointDir": "/home/v-shhuan/nni/experiments/CgG5IK6T/checkpoint"
+      },
+      "experimentName": "example_mnist",
+      "searchSpace": {
+        "learning_rate": {
+          "_type": "choice",
+          "_value": [
+            0.0001,
+            0.001,
+            0.01,
+            0.1
+          ]
+        },
+        "conv_size": {
+          "_type": "choice",
+          "_value": [
+            2,
+            3,
+            5,
+            7
+          ]
+        },
+        "hidden_size": {
+          "_type": "choice",
+          "_value": [
+            124,
+            512,
+            1024
+          ]
+        },
+        "dropout_rate": {
+          "_type": "uniform",
+          "_value": [
+            0.5,
+            0.9
+          ]
+        },
+        "batch_size": {
+          "_type": "choice",
+          "_value": [
+            1,
+            4,
+            8,
+            16,
+            32
+          ]
+        }
+      }
+    },
+    "startTime": 1552408211025
+  }

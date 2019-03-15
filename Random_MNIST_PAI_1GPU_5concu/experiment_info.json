@@ -1,0 +1,93 @@
+{
+    "id": "XtRGGrIw",
+    "revision": 277,
+    "execDuration": 2076,
+    "logDir": "/home/v-shhuan/nni/experiments/XtRGGrIw",
+    "maxSequenceId": 68,
+    "params": {
+      "trialConcurrency": 5,
+      "trainingServicePlatform": "pai",
+      "clusterMetaData": [
+        {
+          "key": "pai_config",
+          "value": {
+            "host": "10.151.40.179",
+            "userName": "quzha",
+            "passWord": "quzha123"
+          }
+        },
+        {
+          "key": "trial_config",
+          "value": {
+            "codeDir": "/home/v-shhuan/nni_code/nni/examples/trials/mnist/.",
+            "virtualCluster": "nni",
+            "gpuNum": 1,
+            "image": "msranni/nni:latest",
+            "command": "python3 mnist.py",
+            "cpuNum": 1,
+            "dataDir": "hdfs://10.151.40.179:9286/quzha",
+            "outputDir": "hdfs://10.151.40.179:9286/quzha",
+            "memoryMB": 8196
+          }
+        }
+      ],
+      "authorName": "default",
+      "tuner": {
+        "builtinTunerName": "Random",
+        "className": "Random",
+        "classArgs": {
+          "optimize_mode": "maximize"
+        },
+        "checkpointDir": "/home/v-shhuan/nni/experiments/XtRGGrIw/checkpoint"
+      },
+      "searchSpace": {
+        "conv_size": {
+          "_value": [
+            2,
+            3,
+            5,
+            7
+          ],
+          "_type": "choice"
+        },
+        "dropout_rate": {
+          "_value": [
+            0.5,
+            0.9
+          ],
+          "_type": "uniform"
+        },
+        "hidden_size": {
+          "_value": [
+            124,
+            512,
+            1024
+          ],
+          "_type": "choice"
+        },
+        "learning_rate": {
+          "_value": [
+            0.0001,
+            0.001,
+            0.01,
+            0.1
+          ],
+          "_type": "choice"
+        },
+        "batch_size": {
+          "_value": [
+            1,
+            4,
+            8,
+            16,
+            32
+          ],
+          "_type": "choice"
+        }
+      },
+      "maxTrialNum": 10000,
+      "experimentName": "example_mnist",
+      "maxExecDuration": 36000
+    },
+    "startTime": 1552308151157
+  }

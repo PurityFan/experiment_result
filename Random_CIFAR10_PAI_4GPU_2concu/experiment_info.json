@@ -1,0 +1,81 @@
+{
+    "id": "IvE7Cz9L",
+    "revision": 30295,
+    "execDuration": 302787,
+    "logDir": "/home/v-shhuan/nni/experiments/IvE7Cz9L",
+    "maxSequenceId": 15,
+    "params": {
+      "tuner": {
+        "className": "Random",
+        "builtinTunerName": "Random",
+        "classArgs": {
+          "optimize_mode": "maximize"
+        },
+        "checkpointDir": "/home/v-shhuan/nni/experiments/IvE7Cz9L/checkpoint"
+      },
+      "trialConcurrency": 2,
+      "trainingServicePlatform": "pai",
+      "experimentName": "example_pytorch_cifar10",
+      "clusterMetaData": [
+        {
+          "value": {
+            "passWord": "quzha123",
+            "userName": "quzha",
+            "host": "10.151.40.179"
+          },
+          "key": "pai_config"
+        },
+        {
+          "value": {
+            "outputDir": "hdfs://10.151.40.179:9286/quzha",
+            "gpuNum": 4,
+            "image": "msranni/nni:latest",
+            "command": "python3 main.py",
+            "virtualCluster": "nni",
+            "dataDir": "hdfs://10.151.40.179:9286/quzha",
+            "codeDir": "/home/v-shhuan/nni_code/nni/examples/trials/cifar10_pytorch/.",
+            "cpuNum": 1,
+            "memoryMB": 8196
+          },
+          "key": "trial_config"
+        }
+      ],
+      "searchSpace": {
+        "model": {
+          "_value": [
+            "vgg",
+            "resnet18",
+            "googlenet",
+            "densenet121",
+            "mobilenet",
+            "dpn92",
+            "senet18"
+          ],
+          "_type": "choice"
+        },
+        "optimizer": {
+          "_value": [
+            "SGD",
+            "Adadelta",
+            "Adagrad",
+            "Adam",
+            "Adamax"
+          ],
+          "_type": "choice"
+        },
+        "lr": {
+          "_value": [
+            0.1,
+            0.01,
+            0.001,
+            0.0001
+          ],
+          "_type": "choice"
+        }
+      },
+      "authorName": "default",
+      "maxTrialNum": 500,
+      "maxExecDuration": 360000
+    },
+    "startTime": 1552312500217
+  }

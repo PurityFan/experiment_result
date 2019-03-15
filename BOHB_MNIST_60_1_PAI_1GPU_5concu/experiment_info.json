@@ -1,0 +1,95 @@
+{
+    "id": "ybHlOwNn",
+    "revision": 230,
+    "execDuration": 1723,
+    "logDir": "/home/v-shhuan/nni/experiments/ybHlOwNn",
+    "maxSequenceId": 56,
+    "params": {
+      "maxTrialNum": 10000,
+      "clusterMetaData": [
+        {
+          "value": {
+            "host": "10.151.40.179",
+            "passWord": "quzha123",
+            "userName": "quzha"
+          },
+          "key": "pai_config"
+        },
+        {
+          "value": {
+            "image": "msranni/nni:latest",
+            "virtualCluster": "nni",
+            "cpuNum": 1,
+            "gpuNum": 1,
+            "codeDir": "/home/v-shhuan/nni_code/nni/examples/trials/mnist_bohb/.",
+            "outputDir": "hdfs://10.151.40.179:9286/quzha",
+            "command": "python3 mnist.py",
+            "memoryMB": 8196,
+            "dataDir": "hdfs://10.151.40.179:9286/quzha"
+          },
+          "key": "trial_config"
+        }
+      ],
+      "trainingServicePlatform": "pai",
+      "experimentName": "example_mnist_BOHB",
+      "trialConcurrency": 5,
+      "maxExecDuration": 36000,
+      "searchSpace": {
+        "conv_size": {
+          "_type": "choice",
+          "_value": [
+            2,
+            3,
+            5,
+            7
+          ]
+        },
+        "batch_size": {
+          "_type": "choice",
+          "_value": [
+            8,
+            16,
+            32,
+            64
+          ]
+        },
+        "dropout_rate": {
+          "_type": "uniform",
+          "_value": [
+            0.5,
+            0.9
+          ]
+        },
+        "learning_rate": {
+          "_type": "choice",
+          "_value": [
+            0.0001,
+            0.001,
+            0.01,
+            0.1
+          ]
+        },
+        "hidden_size": {
+          "_type": "choice",
+          "_value": [
+            124,
+            512,
+            1024
+          ]
+        }
+      },
+      "authorName": "default",
+      "advisor": {
+        "className": "BOHB",
+        "builtinAdvisorName": "BOHB",
+        "classArgs": {
+          "eta": 3,
+          "optimize_mode": "maximize",
+          "max_budget": 60,
+          "min_budget": 1
+        },
+        "checkpointDir": "/home/v-shhuan/nni/experiments/ybHlOwNn/checkpoint"
+      }
+    },
+    "startTime": 1552303313109
+  }

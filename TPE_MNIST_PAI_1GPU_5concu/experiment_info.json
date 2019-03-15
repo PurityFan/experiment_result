@@ -1,0 +1,93 @@
+{
+    "id": "eQwRCVZi",
+    "revision": 573,
+    "execDuration": 4346,
+    "logDir": "/home/v-shhuan/nni/experiments/eQwRCVZi",
+    "maxSequenceId": 137,
+    "params": {
+      "searchSpace": {
+        "batch_size": {
+          "_type": "choice",
+          "_value": [
+            1,
+            4,
+            8,
+            16,
+            32
+          ]
+        },
+        "dropout_rate": {
+          "_type": "uniform",
+          "_value": [
+            0.5,
+            0.9
+          ]
+        },
+        "conv_size": {
+          "_type": "choice",
+          "_value": [
+            2,
+            3,
+            5,
+            7
+          ]
+        },
+        "hidden_size": {
+          "_type": "choice",
+          "_value": [
+            124,
+            512,
+            1024
+          ]
+        },
+        "learning_rate": {
+          "_type": "choice",
+          "_value": [
+            0.0001,
+            0.001,
+            0.01,
+            0.1
+          ]
+        }
+      },
+      "clusterMetaData": [
+        {
+          "key": "pai_config",
+          "value": {
+            "passWord": "quzha123",
+            "userName": "quzha",
+            "host": "10.151.40.179"
+          }
+        },
+        {
+          "key": "trial_config",
+          "value": {
+            "image": "msranni/nni:latest",
+            "codeDir": "/home/v-shhuan/nni_code/nni/examples/trials/mnist/.",
+            "memoryMB": 8196,
+            "outputDir": "hdfs://10.151.40.179:9286/quzha",
+            "command": "python3 mnist.py",
+            "gpuNum": 1,
+            "dataDir": "hdfs://10.151.40.179:9286/quzha",
+            "cpuNum": 1,
+            "virtualCluster": "nni"
+          }
+        }
+      ],
+      "experimentName": "example_mnist",
+      "authorName": "default",
+      "trainingServicePlatform": "pai",
+      "maxTrialNum": 10000,
+      "trialConcurrency": 5,
+      "maxExecDuration": 36000,
+      "tuner": {
+        "className": "TPE",
+        "classArgs": {
+          "optimize_mode": "maximize"
+        },
+        "builtinTunerName": "TPE",
+        "checkpointDir": "/home/v-shhuan/nni/experiments/eQwRCVZi/checkpoint"
+      }
+    },
+    "startTime": 1552303472963
+  }

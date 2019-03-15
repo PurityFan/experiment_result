@@ -1,0 +1,81 @@
+{
+    "id": "vkAl23jL",
+    "revision": 2179,
+    "execDuration": 17073,
+    "logDir": "/home/v-shhuan/nni/experiments/vkAl23jL",
+    "maxSequenceId": 468,
+    "params": {
+      "searchSpace": {
+        "learning_rate": {
+          "_value": [
+            0.0001,
+            0.001,
+            0.01,
+            0.1
+          ],
+          "_type": "choice"
+        },
+        "dropout_rate": {
+          "_value": [
+            0.5,
+            0.9
+          ],
+          "_type": "uniform"
+        },
+        "conv_size": {
+          "_value": [
+            2,
+            3,
+            5,
+            7
+          ],
+          "_type": "choice"
+        },
+        "hidden_size": {
+          "_value": [
+            124,
+            512,
+            1024
+          ],
+          "_type": "choice"
+        },
+        "batch_size": {
+          "_value": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "_type": "choice"
+        }
+      },
+      "maxTrialNum": 1000,
+      "experimentName": "example_mnist",
+      "authorName": "default",
+      "clusterMetaData": [
+        {
+          "key": "codeDir",
+          "value": "/home/v-shhuan/nni_code/nni/examples/trials/mnist_bohb/."
+        },
+        {
+          "key": "command",
+          "value": "python3 mnist.py"
+        }
+      ],
+      "trainingServicePlatform": "local",
+      "advisor": {
+        "classArgs": {
+          "max_budget": 243,
+          "min_budget": 1,
+          "optimize_mode": "maximize",
+          "eta": 3
+        },
+        "builtinAdvisorName": "BOHB",
+        "className": "BOHB",
+        "checkpointDir": "/home/v-shhuan/nni/experiments/vkAl23jL/checkpoint"
+      },
+      "trialConcurrency": 2,
+      "maxExecDuration": 360000
+    },
+    "startTime": 1552379951503
+  }

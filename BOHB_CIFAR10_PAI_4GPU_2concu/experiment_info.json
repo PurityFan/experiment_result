@@ -1,0 +1,84 @@
+{
+    "id": "cpaeEg4R",
+    "revision": 26262,
+    "execDuration": 260834,
+    "logDir": "/home/v-shhuan/nni/experiments/cpaeEg4R",
+    "maxSequenceId": 177,
+    "params": {
+      "trainingServicePlatform": "pai",
+      "experimentName": "example_pytorch_cifar10",
+      "trialConcurrency": 2,
+      "maxTrialNum": 1000,
+      "clusterMetaData": [
+        {
+          "key": "pai_config",
+          "value": {
+            "host": "10.151.40.179",
+            "passWord": "quzha123",
+            "userName": "quzha"
+          }
+        },
+        {
+          "key": "trial_config",
+          "value": {
+            "codeDir": "/home/v-shhuan/nni_code/nni/examples/trials/cifar10_pytorch/.",
+            "cpuNum": 1,
+            "gpuNum": 4,
+            "virtualCluster": "nni",
+            "outputDir": "hdfs://10.151.40.179:9286/quzha",
+            "dataDir": "hdfs://10.151.40.179:9286/quzha",
+            "command": "python3 main_bohb.py",
+            "memoryMB": 8196,
+            "image": "msranni/nni:latest"
+          }
+        }
+      ],
+      "searchSpace": {
+        "lr": {
+          "_type": "choice",
+          "_value": [
+            0.1,
+            0.01,
+            0.001,
+            0.0001
+          ]
+        },
+        "optimizer": {
+          "_type": "choice",
+          "_value": [
+            "SGD",
+            "Adadelta",
+            "Adagrad",
+            "Adam",
+            "Adamax"
+          ]
+        },
+        "model": {
+          "_type": "choice",
+          "_value": [
+            "vgg",
+            "resnet18",
+            "googlenet",
+            "densenet121",
+            "mobilenet",
+            "dpn92",
+            "senet18"
+          ]
+        }
+      },
+      "maxExecDuration": 360000,
+      "authorName": "default",
+      "advisor": {
+        "classArgs": {
+          "eta": 3,
+          "optimize_mode": "maximize",
+          "max_budget": 200,
+          "min_budget": 1
+        },
+        "builtinAdvisorName": "BOHB",
+        "className": "BOHB",
+        "checkpointDir": "/home/v-shhuan/nni/experiments/cpaeEg4R/checkpoint"
+      }
+    },
+    "startTime": 1552311751155
+  }
