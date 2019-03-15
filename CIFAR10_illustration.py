@@ -14,6 +14,8 @@ def get_acc_list(file_dir, curve_color):
         data = json.load(f)
         for trials in data:
             if trials["status"] == "SUCCEEDED":
+                trials["startTime"] /= 10
+                trials["endTime"] /= 10
                 if "finalMetricData" not in trials.keys():
                     print ("No final metrics, trial id = ", trials["id"])
                     continue
