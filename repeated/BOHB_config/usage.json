@@ -1,0 +1,8 @@
+[
+    {"s": 1 , "config": {"batch_size": 201, "channel_1_num": 16, "channel_2_num": 10, "conv_size": 7, "dropout_rate": 0.400815568260708, "hidden_size": 458, "learning_rate": 0.0019036051543970748, "TRIAL_BUDGET": 16} },
+    {"s": 1 , "config": {"batch_size": 208, "channel_1_num": 3, "channel_2_num": 0, "conv_size": 2, "dropout_rate": 0.482808287637073, "hidden_size": 477, "learning_rate": 0.0028817396338351496, "TRIAL_BUDGET": 16} },
+    {"s": 1 , "config": {"batch_size": 120, "channel_1_num": 23, "channel_2_num": 20, "conv_size": 5, "dropout_rate": 0.24993688179497403, "hidden_size": 82, "learning_rate": 0.0016534419816364326, "TRIAL_BUDGET": 16} },
+    {"s": 1 , "config": {"batch_size": 245, "channel_1_num": 12, "channel_2_num": 0, "conv_size": 5, "dropout_rate": 0.3867523843973557, "hidden_size": 388, "learning_rate": 0.0019186276175047463, "TRIAL_BUDGET": 16} },
+    {"s": 1 , "config": {"batch_size": 249, "channel_1_num": 6, "channel_2_num": 8, "conv_size": 2, "dropout_rate": 0.33195533831436663, "hidden_size": 39, "learning_rate": 0.0027240508164663303, "TRIAL_BUDGET": 16} },
+    {"s": 1 , "config": {"batch_size": 160, "channel_1_num": 23, "channel_2_num": 16, "conv_size": 3, "dropout_rate": 0.1603084139700079, "hidden_size": 346, "learning_rate": 0.007910265826370767, "TRIAL_BUDGET": 16} }
+]
